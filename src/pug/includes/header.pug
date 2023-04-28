@@ -1,0 +1,43 @@
+header.header 
+    .header__observer
+    .header__container.container
+        a.header__logo(href="#")
+            img(src="./images/logo.svg" alt="logo")
+            span.header__logo-text
+                | Производим#[br]впечатления!
+        nav.header__nav 
+            ul.header__menu-list 
+                li.header__menu-item 
+                    a.header__menu-link(href="#") О нас
+                li.header__menu-item 
+                    a.header__menu-link(href="#") Кейс
+                li.header__menu-item 
+                    a.header__menu-link(href="#") Этапы работы
+                li.header__menu-item 
+                    a.header__menu-link(href="#") Контакты
+            .header_actions.header__actions_mobile
+                a.header__phone(href="tel:+79172377232") +7 917 237 72 32
+                button.header__button.button.button_filled(type="button") Заказать звонок
+        .header__actions.header__actions_desktop
+            a.header__phone(href="tel:+79172377232") +7 917 237 72 32
+            button.header__button.button.button_filled(type="button") Заказать звонок
+            .header__burger 
+                span
+    .popup 
+        .popup__container 
+            .popup__content 
+                .popup__close
+                .popup__content-page.popup__content-page_one
+                    .popup__header 
+                        h3.popup__title #[span._aacent Заказать] звонок
+                        p.popup__subtitle Заполните форму и мы свяжемся с вами, чтобы обсудить детали
+                    .popup__body 
+                        form.popup__form.form(action="#" method="POST" name="order-call") 
+                            input.form__input(type="text" placeholder="Ваше имя" name="name")
+                            input.form__input.form__input_required(type="tel" placeholder="Телефон*" name="phone")
+                            button.form__submit.button.button_filled(type="submit") Отправить
+                            span.form__agreement Нажимая на кнопки «Отправить» вы даете согласие на обработку персональных данных
+                .popup__content-page.popup__content-page.popup__content-page_two
+                    .popup__header 
+                        h3.popup__title Ваше обращение#[br]#[span._aacent принято] 
+                        p.popup__subtitle Мы свяжемся с вами в ближайшее время, чтобы обсудить детали

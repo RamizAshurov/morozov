@@ -1,0 +1,107 @@
+.form {
+    &__title {
+        color: $grey1;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.167;
+        margin: 0 auto 20px;
+        max-width: 650px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+        & > * {
+            margin: 0 10px;
+            width: calc((100% - 60px) / 3);
+        }
+    }
+    &__input {
+        border: 1px solid $grey2;
+        font-size: 20px;
+        line-height: 1.56;
+        padding: 15px 20px;
+        &::placeholder {
+            color: #434343;
+        }
+        &_underline {
+            border-top-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+        }
+        &_error {
+            border-color: $red;
+            & + label {
+                border-bottom-color: $red;
+            }
+            &::placeholder {
+                color: $red
+            }
+        }
+    }
+    &__file {
+        position: relative;
+    }
+    &__file-input {
+        appearance: none;
+        // .visually-hidden
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0); 
+        // border: 0;
+        // margin: -1px
+        // padding: 0;
+
+    }
+    &__file-label {
+        border-bottom: 1px solid $grey;
+        color: #434343;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 1.56;
+        display: flex;
+        align-items: center;
+        padding: 15px 20px;
+        svg {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+        span {
+            white-space: nowrap;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $red
+            }
+        }
+    }
+    &__submit {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.56;
+    }
+    &__agreement {
+        color: $grey2;
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: center;
+    }
+    @include gap {
+        &__content {
+            flex-direction: column;
+            margin-left: 0;
+            margin-right: 0;
+            & > * {
+                margin: 0 0 20px;
+                width: auto;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+} 

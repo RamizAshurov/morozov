@@ -1,0 +1,257 @@
+:root {
+    --animation-duration: 0.3s
+ }
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+
+body {
+    background-color: $black;
+    color: $white;
+    font-family: "Roboto", "sans-serif";
+    &.body_lock {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 1220px;
+    @include phone {
+        padding: 0 15px
+    }
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.167;
+    text-transform: uppercase;
+    &_center {
+        text-align: center;
+    }
+    &_small {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.1875;
+    }
+    @include phone {
+        font-size: 32px;
+    }
+}
+.button {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    padding: 15px 24px;
+    &_filled {
+        background: linear-gradient(90deg, $red 0%, rgba(227, 0, 15, 0) 100%);
+    }
+    &_outlined {
+        border: 1px solid $red;
+        position: relative;
+        &:before {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            content: "";
+            background: linear-gradient(-90deg,rgba(0, 0, 0, 1) 0,rgba(227,0,15,0) 100%);
+        }
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background: $red;
+        }
+        &_outlined {
+            &:hover {
+                &:before {
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
+
+._aacent {
+    color: $red;
+}
+
+._border-hightlight {
+    position: relative;
+    &:before {
+        background-color: $red;
+        border-radius: 2px;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -2.5px;
+        width: 5px;
+        height: 100%;
+    }
+}
+
+.line {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    &_vertical {
+        top: 0;
+        width: 1px;
+        height: 100%;
+        &_start {
+            left: 20px;
+        }
+        &_middle {
+            left: calc(50% - 0.5px);
+        }
+        &_end {
+            right: 20px;
+        }
+    }
+    &_horizontal {
+        left: 0;
+        width: 100%;
+        height: 1px;
+        &_start {
+            top: 0;
+        }
+        &_middle {
+            top: calc(50% - 0.5px)
+        }
+        &_end {
+            top: 100%;
+        }
+    }
+    @include phone {
+        &_vertical {
+            &_start {
+                left: 15px;
+            }
+            &_end {
+                right: 15px;
+            }
+        }
+    }
+}
+
+.cross {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    &:before, &:after {
+        background-color: rgba(255, 255, 255, 0.2);
+        content: "";
+        position: absolute;
+    }
+    &:before {
+        top: 0;
+        left: 50%;
+        width: 1px;
+        height: 100%;
+    }
+    &:after {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+    }
+    &_top_right {
+        top: 0;
+        right: 21px;
+        transform: translate(50%, -50%);
+    }
+    &_top_left {
+        top: 0;
+        left: 20px;
+        transform: translate(-50%, -50%);
+    }
+    &_bottom_right {
+        bottom: 0;
+        right: 21px;
+        transform: translate(50%, 50%);
+    }
+    &_bottom_left {
+        bottom: 0;
+        left: 20px;
+        transform: translate(-50%, 50%);
+    }
+    @include phone {
+        &_top_right, &_bottom_right {
+            right: 15px;
+        }
+        &_top_left, &_bottom_left {
+            left: 15px;
+        }
+    }
+}
+
+.animate__shakeX {
+    animation-name: shakeX;
+    animation-duration: 0.5s;
+}
+
+
+@keyframes shakeX {
+    from,
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    15%,
+    45%,
+    75% {
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    30%,
+    60%,
+    90% {
+      transform: translate3d(10px, 0, 0);
+    }
+  }
+
+  @keyframes scroll-down {
+    from {
+        transform: translate3d(-50%, 50%, 0) rotate(90deg);
+
+    }
+    to {
+      transform: translate3d(-50%, 100%, 0) rotate(90deg);
+    }
+  
+  }

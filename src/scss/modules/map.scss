@@ -1,0 +1,219 @@
+.map {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    margin: 100px 0 200px;
+    .container {
+        position: relative;
+    }
+    &__title {
+        font-size: 32px;
+        line-height: 1.1875;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        @include phone {
+            font-size: 24px;
+            top: 30px;
+        }
+    }
+    &__backdrop {
+        background:linear-gradient(231deg, rgba(22,22,22,1) 0%, rgba(0,0,0,0) 56%);
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        @include desktop {
+            right: 0;
+        }
+    }
+    .line {
+        height: calc(100% + 100px);
+        top: -100px;
+        z-index: 2;
+    }
+    &__svg {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+        path {
+            &.city-area {
+                cursor: pointer;
+                transition: fill 0.15s ease 0s;
+                @media (any-hover: hover) {
+                    &:hover {
+                        fill: $red
+                    }
+                }
+            }
+        }
+    }
+    .city {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        pointer-events: none;
+        position: absolute;
+        &__text {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        &__logo {
+            flex-shrink: 0;
+        }
+        &_moscow {
+            .city__text {
+                font-size: 18px;
+                line-height: 20px;
+            }
+            top: 56.5%;
+            left: 14.65%;
+            @include desktop {
+                left: 12.65%;
+            }
+            @include gap {
+                left: 19%;
+            }
+        }
+        &_nn {
+            top: 50%;
+            left: 18%;
+            @include desktop {
+                left: 16.5%;
+            }
+        }
+        &_spb {
+            top: 46%;
+            left: 16.7%;
+            @include desktop {
+                left: 15.7%;
+            }
+        }
+        &_rostov {
+            left: 22.5%;
+            bottom: 22%;
+            @include desktop {
+                left: 21%;
+            }
+        }
+        &_krasnodar {
+            left: 20%;
+            bottom: 18%;
+            @include desktop {
+                left: 18.5%;
+            }
+        }
+        &_grozniy {
+            left: 22.5%;
+            bottom: 14.5%;
+            @include desktop {
+                left: 21.5%;
+            }
+        }
+        &_innopolis {
+            bottom: 30.5%;
+            right: 68.5%;
+            @include desktop {
+                right: 69.5%;
+            }
+        }
+        &_cheboksary {
+            bottom: 34%;
+            right: 70%;
+            @include desktop {
+                right: 71%;
+            }
+        }
+        &_chelny {
+            bottom: 37.5%;
+            left: 34%;
+            @include desktop {
+                left: 33%;
+            }
+        }
+        &_kazan {
+            bottom: 38%;
+            right: 66%;
+            @include desktop {
+                right: 67%;
+            }
+        }
+        &_nizhnekamsk {
+            left: 32.8%;
+            bottom: 33.3%;
+            @include desktop {
+                left: 31.8%;
+            }
+        }
+        &_samara {
+            left: 31.8%;
+            bottom: 28.3%;
+            @include desktop {
+                left: 30.8%;
+            }
+        }
+        &_ufa {
+            left: 38.4%;
+            bottom: 30.5%;
+            @include desktop {
+                left: 37.4%;
+            }
+        }
+        &_izhevck {
+            left: 37%;
+            bottom: 39.5%;
+            @include desktop {
+                left: 36%;
+            }
+        }
+        &_tymen {
+            left: 50%;
+            bottom: 36%;
+            @include desktop {
+                left: 49%;
+            }
+        }
+        &_ekb {
+            left: 44.5%;
+            bottom: 40%;
+            @include desktop {
+                left: 43.5%;
+            }
+        }
+        &_stokgolm {
+            right: 86%;
+            top: 43%;
+            @include desktop {
+                right: 87%;
+            }
+        }
+        @include gap {
+            &__text {
+                display: none;
+            }
+            &__logo {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        @include phone {
+            &__logo {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    @include desktop {
+        margin: 100px 0;
+        .container {
+            padding: 0;
+            .line {
+                display: none
+            }
+        }
+    }
+    @include gap {
+        margin: 50px 0;
+    }
+}

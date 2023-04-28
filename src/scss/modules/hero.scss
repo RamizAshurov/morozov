@@ -1,0 +1,138 @@
+.hero {
+    background-color: $black;
+    background-image: url("../images/hero.png");
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -284px;
+    padding: 70px 0 0;
+    height: calc(100vh + 284px); // +30vh ??
+    min-height: 960px;
+    overflow-x: hidden;
+    &__container {
+        position: relative;
+        height: 100%;
+    }
+    &__title {
+        font-size: 58px;
+        font-weight: 600;
+        line-height: 1.17;
+        text-transform: uppercase;
+    }
+    &__services {
+        position: relative;
+        .cross {
+            right: 0px;
+        }
+    }
+    &__services-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 12px 0 0;
+        padding: 20px 0;
+    }
+    &__service-item {
+        color: $grey1;
+        font-size: 20px;
+        line-height: 1.15;
+        text-transform: uppercase;
+    }
+    &__desc {
+        color: $grey2;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 20px 0 0;
+        padding: 0 0 0 20px;
+        max-width: 440px;
+        text-transform: uppercase;
+    }
+    &__title, &__services-list, &__desc {
+        padding-left: 20px;
+    }
+    &__link {
+        display: inline-block;
+        margin: 60px 0 0;
+        width: 100%;
+        max-width: 480px;
+        text-align: center;
+    }
+    &__line {
+        &_vertical {
+            top: -70px;
+            height: calc(100% + 70px);
+        }
+        &_horizontal {
+            left: calc((100vw - 1180px) / -2);
+            width: 100vw;
+        }
+    }
+    &__cross {
+        bottom: 40%;
+    }
+    &__scroll-down {
+        display: flex;
+        gap: 4px;
+        position: absolute;
+        left: 50%;
+        bottom: 40%;
+        transform: translate(-50%, 50%) rotate(90deg);
+        animation-name: scroll-down;
+        animation-duration: .5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        .hero_scroll & {
+            animation-play-state: paused;
+        }
+    }
+    @include desktop {
+        &__line {
+            &_horizontal {
+                left: -20px
+            }
+        }
+    }
+    @include tablet {
+        &__title {
+            font-size: 44px;
+        }
+    }
+    @include gap {
+        padding-top: 50px;
+        height: calc(100vh - 81px);
+        margin-bottom: 0;
+        min-height: 0;
+        &__title {
+            font-size: 36px;
+        }
+        &__services-list {
+            gap: 20px;
+        }
+        &__service-item {
+            font-size: 18px;
+        }
+        &__link {
+            max-width: 320px;
+        }
+        &__line {
+            height: calc(100% + 50px);
+        }
+        &__cross, &__scroll-down {
+            bottom: 12%;
+        }
+    }
+    @include phone {
+        padding-top: 30px;
+        &__title {
+            font-size: 28px;
+        }
+        &__services-list {
+            gap: 10px;
+        }
+        &__service-item {
+            font-size: 16px;
+        }
+        &__line {
+            height: calc(100% + 30px);
+        }
+    }
+}

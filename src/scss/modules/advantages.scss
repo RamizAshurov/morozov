@@ -1,0 +1,82 @@
+.advantage-item {
+    padding: 0 100px 0 0;
+    width: 50%;
+    &__icon {
+        background: linear-gradient(90deg, #1B1B1B 0%, rgba(27, 27, 27, 0) 100%);
+        padding: 10px 0 10px 20px;
+    }
+    &__title {
+        color: $grey1;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.167;
+        margin: 20px 0 0;
+        padding: 0 0 0 20px;
+        text-transform: uppercase;
+    }
+    &__desc {
+        color: $grey1;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.6;
+        margin: 20px 0 0;
+        padding: 0 0 0 20px
+    }
+    @include desktop {
+        padding-right: 60px;
+    }
+    @include tablet {
+        padding-right: 30px;
+    }
+    @include gap {
+        padding-right: 0;
+        width: 100%;
+    }
+}
+.advantages {
+    padding: 112px 0 0;
+    &__body {
+        margin: 60px 0 0;
+        position: relative;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__list-item {
+        margin: 0 0 100px
+    }
+
+    @include tablet {
+        &__list-item {
+            margin: 0 0 50px;
+        }
+    }
+    @include min_gap {
+        .line {
+            &_vertical {
+                &_start {
+                    left: 0;
+                }
+                &_end {
+                    right: 0;
+                }
+            }
+        }
+    }
+    @include gap {
+        padding: 50px 0 0;
+        position: relative;
+        &__body {
+            position: static;
+            margin: 30px 0 0;
+        }
+        .line {
+            &_vertical {
+                &_middle {
+                    display: none;
+                }
+            }
+        }
+    }
+}
